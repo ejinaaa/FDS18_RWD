@@ -1,7 +1,7 @@
 /* --------------------------------------------
   * 기본 스타일 */
 
-/* 셀렉션 스타일 */
+/* 셀렉션 스타일(드래그했을 때 스타일. 필수는 아님) */
 ::-moz-selection {
   background: #233d84;
   color: #ffffff;
@@ -14,7 +14,7 @@
 /* 루트 요소의 기본 글자크기 설정 */
 html {
   font-size: 10px;
-  overflow-y: visible;
+  overflow-y: visible;/*세로 스크롤해서 보겠다*/
 }
 
 /* 기본 박스사이징 설정 */
@@ -27,7 +27,7 @@ body *::after {
   box-sizing: border-box;
 }
 
-/* 탭 하이라이트 색상 */
+/* 탭 하이라이트 색상 (테블릿이나 모바일에서 터치했을 때)*/
 body * {
   -webkit-tap-highlight-color: rgba(255, 255, 200, 0.3);
   tap-highlight-color: rgba(255, 255, 200, 0.3);
@@ -39,17 +39,12 @@ body {
   font-size: 1.6rem;
   font-weight: 400;
   background-color: #fff;
-}
-
-/* 내비게이션 내 기본 링크 스타일 */
-nav a {
-  color: inherit;
-  text-decoration: none;
+  color: #181818;
 }
 
 /* a 요소 내 이미지에 발생하는 갭 제게 */
 a img {
-  vertical-align: middle;
+  vertical-align: middle;/*인라인의 모습을 유지하면서 갭 없애기위해*/
 }
 
 /* fieldset 요소의 기본 스타일 리셋 */
@@ -73,7 +68,7 @@ fieldset {
 }
 
 button[disabled] {
-  cursor: not-allowed;
+  cursor: not-allowed;/*커서를 움직일 수 없는 상태를 만들어줌*/
 }
 
 /* 링크 요소의 밑줄 및 글자 색상 재 정의 */
