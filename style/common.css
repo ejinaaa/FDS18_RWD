@@ -1,0 +1,72 @@
+/* 기본 레이아웃 */
+body {
+  display: flex;/*이 안에서 배치 위치를 다르게 하고 싶을 때 flex사용하면 order속성을 사요할 수 있으므로 편리*/
+  flex-flow: row wrap;
+}
+.app-header-container,
+.app-main,
+.app-footer-container {
+  width: 100%;
+}
+
+/* 헤더 */
+/* 공동 헤더 */
+.app-header-container {
+  background-color: yellow;
+}
+.app-header {
+  background-color: pink;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+@media all and (max-width: 767px){/*all 모든 디바이스를 선택하겠다. pint쓰면 프린트될 스타일을 설정.*/
+  /* 모바일 헤더 */
+  /* 햄버거 메뉴 */
+  .is-open-menu {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    padding: 0;
+  }
+  .is-open-menu .ir {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: url(./../images/button-navigation.svg) no-repeat 50% 50% ;/* 포지션값 뒤에 슬래시를 넣고 / 40px 40px 들어가는 수치는 bg-size가됨. 벡터이미지기때문에 늘려줘도 괜찮음.*/
+  }
+  /* 모바일 네비게이션 */
+.app-navigation {
+  display: none;
+  background-color: lightgreen;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /*right: 0;width를 주지 않고 left,right를 줘서 늘려버림.firefox에서 안될 떄 있음*/
+}
+}
+
+@media all and (min-width: 768px){
+  /* 데스크탑 헤더 */
+  .app-header-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+  .app-header {
+    width: 768px;
+  }
+  .is-open-menu,
+  .is-close-menu {
+    display: none;
+  }
+  /* 데스크탑 내비게이션 */
+  .app-navigation ul {
+    display: flex;
+    flex-flow: row nowrap;
+
+  }
+}
