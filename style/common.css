@@ -2,7 +2,7 @@
 body {
   display: flex;
   /*body에서 자식요소의 배치 순서를 다르게 하고 싶을 때 flex사용하면 order속성을 사용할 수 있으므로 편리*/
-  flex-flow: row wrap;
+  flex-flow: row wrap;/*column을 사용하면 height를 지정해야하기 때문에 유연하게 배치가 불가능*/
 }
 
 .app-header-container,

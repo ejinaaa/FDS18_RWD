@@ -14,13 +14,13 @@
 /* 루트 요소의 기본 글자크기 설정 */
 html {
   font-size: 10px;
-  overflow-y: visible;/*세로 스크롤해서 보겠다*/
+  overflow-y: visible;/*세로는 다 보여지게 해서 스크롤해서 보겠다*/
 }
 
 /* 기본 박스사이징 설정 */
 body,
 body *,
-body::before,
+body::before,/*body에 가상요소를 만들어 사용할 수 있기 때문에*/
 body::after,
 body *::before,
 body *::after {

@@ -1,0 +1,83 @@
+/* 레이아웃 */
+body {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+.header-container,
+.main,
+.footer-container {
+  width: 100%;
+}
+/* 공통 헤더 */
+.header {
+  align-items: center;
+  background: yellow;
+  display: flex;
+  justify-content: space-between;
+}
+/* 공통 로고 */
+.logo {
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 176px;
+}
+.logo-link {
+  display: block;
+}
+.logo img {
+  /* display: block; */
+}
+
+
+@media all and (max-width: 767px) {
+  /* 모바일 */
+  /* 모바일 헤더 */
+  /* 모바일 내비게이션 */
+  .navigation {
+    position: fixed;
+    top: 0;
+    left: 100vw;
+    width: 100vw;
+    height: 100vh;
+    background: navy;
+  }
+  /* 햄버거 메뉴 */
+  .navigation .open-btn {
+    width: 50px;
+    height: 50px;
+    background: url(./../images/button-navigation.svg) no-repeat;
+  }
+}
+
+@media all and (min-width: 768px) {
+  /* 데스크탑 */
+  /* 데스크탑 헤더 */
+  .header-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+  .header {
+    width: 768px;
+  }
+  .logo a img {
+    width: 140px;
+  }
+  /* 데스크탑 내비게이션 */
+  .navigation .main-menu {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+  .navigation .main-menu li {
+    margin-left: 5px;
+  }
+  .navigation .main-menu li a {
+    padding: 5px;
+  }
+  /* 데스크탑 내비게이션 버튼 */
+  .header .button {
+    display: none;
+  }
+}
