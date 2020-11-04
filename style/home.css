@@ -35,6 +35,7 @@
 /* 음료 리스트 */
 .ediya-recommend-list {
   position: relative;
+  border: 1px solid red;
 }
 .ediya-recommend-beverage {
   position: absolute;
@@ -60,7 +61,7 @@
 .iframe-wrapper {
   width: 100%;
   padding-top: 56.25%;
-  /* height: 0 !important; 높이가 혹시나 들어가면 padding보다 커져버리니까*/
+  /* height: 0 !important; 높이가 혹시나 들어가면 padding과 합쳐져 높이가 늘어나버리니까*/
   position: relative;
 }
 .iframe4-3 {

@@ -25,18 +25,71 @@ body {
   width: 176px;
   padding: 18px;
   margin: 0;
-  font-size: 14px;
+  font-size: 14px;/*자식요소의 높이가 h1이 갖고 있는 라인하이트보다 작으면 h1은 라인하이트값으로 높이를 유지하기 때문에 자식요소만큼만의 높이를 갖지 못하고 폰트사이즈를 줄여 라인하이트값도 같이 줄어들게 만듬*/
 }
-
 .brand a {
   display: block;
 }
+/* 공통 푸터 */
+.app-footer-container {
+  background-color: var(--theme-dark);
+  color: var(--theme-disable);
+}
+.app-footer {
+  font-size: 1.2rem;
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+}
+.app-footer > * {
+  width: 100%;
+}
+.footer-brand {
+  padding: 20px 0 10px;
+}
+.guide-list {
+  order: -1;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 15px;
+}
+.guide-list li {
+  margin: 0 5px;
+}
+.guide-list a {
+  display: block;
+  padding: 5px;
+}
+.address {
+  font-style: normal;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.address span {
+  margin: 10px 5px 0;
+}
+.copyright {
+  font-size: 1.1rem;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+/* 공통 위로가기 버튼 */
+.button-goToTop {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+}
 
 @media all and (max-width: 767px) {
+  /*all 모든 디바이스를 선택하겠다. print쓰면 프린트될 스타일을 설정.*/
 
-  /*all 모든 디바이스를 선택하겠다. pint쓰면 프린트될 스타일을 설정.*/
   /* 모바일 헤더 */
-
   /* 햄버거 메뉴 */
   .is-open-menu {
     width: 50px;
@@ -101,6 +154,14 @@ body {
     transform: none;
     /*transform시키지 않으므로 원래자리로 돌아옴.*/
   }
+  /* 모바일 푸터 */
+  .guide-list {
+    border-bottom: 1px solid currentColor;
+  }
+  .address,
+  .copyright {
+    padding: 0 20px;
+  }
 }
 
 @media all and (min-width: 768px) {
@@ -129,5 +190,21 @@ body {
   .app-navigation li {
     margin-left: 8px;
     color: #24388d;
+  }
+  /* 데스크탑 푸터 */
+  .app-footer-container {
+    position: relative;
+  }
+  .app-footer-container::before {
+    content: "";
+    position: absolute;
+    top: 53px;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid currentColor;
+  }
+  .app-footer {
+    width: 740px;
+    margin:0 auto;
   }
 }

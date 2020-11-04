@@ -1,5 +1,65 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+@import url(//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css);
+
+/* 변수 */
+:root {
+  --theme-primary: #24388d;
+  --theme-bright: #fff;
+}
+
+/* 리셋 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* 폰트 사이즈 */
+html {
+  font-size: 10px;
+}
+/* 박스 사이징 */
+body,
+body::before,
+body::after,
+body * {
+  box-sizing: border-box;
+}
+/* 숨김 콘텐츠 */
+.a11y-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding-top:1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: polygon(0, 0, 0, 0);
+}
 /* 레이아웃 */
 body {
+  margin: 0;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
@@ -9,75 +69,205 @@ body {
 .footer-container {
   width: 100%;
 }
-/* 공통 헤더 */
+/* 헤더 */
 .header {
-  align-items: center;
   background: yellow;
   display: flex;
+  flex-flow: row nowrap;
   justify-content: space-between;
+  align-items: center;
+  
 }
-/* 공통 로고 */
 .logo {
-  margin-top: 0;
-  margin-bottom: 0;
-  width: 176px;
+  font-size: 1rem;
 }
 .logo-link {
   display: block;
+  padding:18px
 }
-.logo img {
-  /* display: block; */
+.logo-link img {
+  width: 140px;
+}
+/* 추천 메뉴 */
+.recommend {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+/* 추천 메뉴 텍스트 */
+.recommend-text {
+}
+.recommend-text[lang="en"] {
+  font-weight: 100;
+}
+.recommend-text[lang="en"] em {
+  font-style: normal;
+  color: var(--theme-primary);
+  font-weight: 700;
+}
+.recommend-text[lang="en"]:after {
+  content: "";
+  display: block;
+  width: 40px;
+  border-top: 1px solid #000;
+  margin: 0 auto;
+}
+.recommend-text:nth-of-type(2) {
+  font-size: 1.4rem;
+}
+/* 추천 메뉴 리스트 */
+.recommend-list {
+  position: relative;
+  border-top: 10px solid red;
+}
+.recommend-beverage {
+  position: absolute;
+}
+.recommend-beverage img {
+  min-width: 100%;
+  height: auto;
+}
+/* 추천 메뉴 버튼 */
+.recommend-more-menu-btn {
+  padding: 8px 18px;
+  border: 1px solid var(--theme-primary);
+  font-size: 1.4rem;
+  color: var(--theme-primary);
+  font-weight: 700;
+  user-select: none;
 }
 
-
-@media all and (max-width: 767px) {
+@media all and (max-width:767px) {
   /* 모바일 */
-  /* 모바일 헤더 */
-  /* 모바일 내비게이션 */
-  .navigation {
+  /* 헤더 */
+  .header {
+    position: relative;
+  }
+  /* 내비 */
+  .navigation{
     position: fixed;
     top: 0;
     left: 100vw;
     width: 100vw;
     height: 100vh;
-    background: navy;
+    padding-top: 60px;
+    background: hsla(225, 57%, 10%, 0.9);
+    backdrop-filter: blur(2px);
+    transition: 500ms;
   }
-  /* 햄버거 메뉴 */
-  .navigation .open-btn {
-    width: 50px;
-    height: 50px;
-    background: url(./../images/button-navigation.svg) no-repeat;
+  .navigation.is-active {
+    left: 0;
   }
-}
-
-@media all and (min-width: 768px) {
-  /* 데스크탑 */
-  /* 데스크탑 헤더 */
-  .header-container {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
+  .main-menu li {
+    border-bottom: 1px solid hsla(255, 57%, 30%, 0.5);
   }
-  .header {
-    width: 768px;
+  .main-menu a {
+    display: block;
+    padding: 12px 22px;
+    color: var(--theme-bright);
+    font-size: 1.6rem;
   }
-  .logo a img {
-    width: 140px;
+  /* 내비 버튼 */
+  .open-btn,
+  .close-btn {
+  border: none;
+  padding: 0;
+  width: 50px;
+  height: 50px;
   }
-  /* 데스크탑 내비게이션 */
-  .navigation .main-menu {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
+  .open-btn {
+    background: url(./../images/button-navigation.svg) no-repeat 50% 50%;
   }
-  .navigation .main-menu li {
-    margin-left: 5px;
+  .close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: transparent;
+    color: var(--theme-bright);
+    font-size: 2.5rem;
   }
-  .navigation .main-menu li a {
-    padding: 5px;
+  /* 추천 메뉴 */
+  .recommend {
+    padding-top: 42px;
+    padding-bottom: 20px;
   }
-  /* 데스크탑 내비게이션 버튼 */
-  .header .button {
+  /* 추천 메뉴 텍스트 */
+  .recommend-text[lang="en"] {
+    font-size: 2.5rem;    
+  }
+  .recommend-text[lang="en"] em {
+    display: block;
+    font-size: 3.1rem;
+    text-align: center;
+  }
+  .recommend-text[lang="en"]:after {
+    margin-top: 15px;
+  }
+  .recommend-text:nth-of-type(2) {
+    margin-top: 15px;
+  }
+  /* 추천 메뉴 리스트 */
+  .recommend-beverage:first-child {
     display: none;
   }
+  .recommend-beverage:last-child {
+    width: 60%;
+  }
+  /* 추천 메뉴 버튼 */
+}
+
+@media all and (min-width:768px) {
+  /* 데스크탑 */
+  /* 레이아웃 */
+  .header,
+  .footer {
+    width: 740px;
+  }
+  /* 헤더 */
+  .header-container,
+  .main,
+  .footer-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  /* 내비 */
+  .main-menu {
+    display: flex;
+  }
+  .main-menu li {
+    margin-left: 5px;
+  }
+  .main-menu a {
+    padding: 4px;
+    font-size: 1.5rem;
+  }
+  /* 내비 버튼 */
+  .open-btn,
+  .close-btn {
+    display: none;
+  }
+  /* 추천 메뉴 */
+  .recommend {
+    padding-top: 50px;
+    padding-bottom: 36px;
+  }
+  /* 추천 메뉴 텍스트 */
+  .recommend-text[lang="en"] {
+    font-size: 3.1rem;
+  }
+  .recommend-text[lang="en"]:after {
+    margin-top: 30px;
+  }
+  .recommend-text:nth-of-type(2) {
+    margin-top: 30px;
+  }
+  /* 추천 메뉴 리스트 */
+  .recommend-beverage:first-child {
+    width: 360px;
+  }
+  .recommend-beverage:last-child {
+    width: 458px;
+  }
+  /* 추천 메뉴 버튼 */
 }
