@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--반응형에 필수. 실제 기기에 불리해서 보여달라.-->
+  <title>로그인 - 이디야 커피(Ediya Coffee)</title>
+  <meta name="description" content="이디야 커피 브랜드 사이트 (학습용) 홈페이지입니다." />
+  <meta name="keywords" content="이디야, 커피, 브랜드, 사이트, 학습용, 홈페이지, 이듬, 블렌디드 러닝" />
+  <meta name="author" content="이듬(E.UID)" />
+
+  <link rel="preload" as="style" href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css" />
+  <link rel="preload" as="style" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="preload" as="style" href="./../style/style.css" />
+
+  <!-- 스타일링 -->
+  <link rel="stylesheet" href="./../style/style.css" />
+  <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+  <!--구형 브라우저에서는 ico확장자, 모던에선 svg, png가능-->
+
+</head>
+
+<body class="membership">
+  <div class="app-header-container">
+    <header class="app-header">
+      <h1 class="brand">
+        <a href="./index.html"><img src="./../images/brand.svg" alt="Ediya Coffee" class="respons" /></a>
+        <!--svg확대축소시 이미지 손실X-->
+      </h1>
+      <button type="button" class="button is-open-menu" aria-label="메뉴 열기" title="메뉴 열기">
+        <!--햄버거버튼-->
+        <span class="ir"></span>
+        <!--안에 텍스트가 없기때문에 aria-label을 넣어 스크린리더에서 읽을 수 있게 함.-->
+      </button>
+      <nav class="app-navigation">
+        <h2 class="a11y-hidden">메인 메뉴</h2>
+        <ul class="reset-list">
+          <!--agent스타일을 없애고 싶은 요소에 reset클래스를 줌-->
+          <li><a href="./views/login-fds.html">로그인</a></li>
+          <li><a href="./views/signup-fds.html">회원 가입</a></li>
+          <li><a href="./views/ui-design.html">이디야 디자인</a></li>
+          <li><a href="./views/beverage-fds.html">이디야 음료</a></li>
+          <li><a href="./views/news-fds.html">이디야 뉴스</a></li>
+          <li><a href="./views/store-fds.html">매장 찾기</a></li>
+        </ul>
+        <button type="button" class="button is-close-menu" title="메뉴 닫기" aria-label="메뉴 닫기">
+          <span class="close" aria-hidden="true">×</span>
+          <!--텍스트는 벡터데이터. 자판에있는 x아님. 곱하기 기호. 스크린리더가 '곱하기버튼'이라고 읽을 수 있기 때문에 aria-hidden을 넣어 읽지 않게 만듬.-->
+        </button>
+      </nav>
+    </header>
+  </div>
+  <main class="app-main">
+    <section class="member login">
+      <h2 class="member-headline">로그인</h2>
+      <p class="member-text" lang="en">Welcome, Ediya Coffee</p>
+      <p class="member-text">이디야커피에 오신 것을 환영합니다.</p>
+      <form action="#" method="POST" class="member-form">
+        <fieldset>
+          <legend>회원가입 폼</legend>
+          <div class="member-id">
+            <label for="userEmail">이메일</label>
+            <input type="email" id="userEmail" name="userEmail" aria-required="true" aria-invalid="false"
+              aria-describedby="emailErrorFeedback" />
+            <span role="alert" id="emailErrorFeedback" class="member-id--error">이메일 입력 방법이 잘못되었습니다. (예:
+              user@domain.io)</span>
+          </div>
+          <div class="member-password">
+            <label for="userPassword">패스워드</label>
+            <input type="password" id="userPassword" name="userPassword" aria-required="true" aria-invalid="false"
+              aria-describedby="passwordErrorFeedback" />
+            <span role="alert" id="passwordErrorFeedback" class="member-password--error">패스워드는 숫자, 영어 조합 6자 이상 입력해야
+              합니다.</span>
+            <button type="button" class="button-password" aria-label="패스워드 보기"><span class="ir"></span></button>
+          </div>
+          <div class="save-email">
+            <input type="checkbox" id="userEmailSave" />
+            <span class="checkbox"></span>
+            <!--폼 관련 요소는 스타일주기 까다로워서 radio박스를 커스텀 디자인하기 위해 span사용-->
+            <label for="userEmailSave">이메일 저장</label>
+          </div>
+          <div class="button-container is--disabled">
+            <button type="submit" class="button-login button-fill" disabled="disabled">로그인</button>
+            <!--submit 버튼-->
+            <a href="./signup.html" class="link-signup button-stroke">회원가입</a>
+            <!--링크이동이므로 앵커태그-->
+          </div>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+  <footer class="app-footer-container">
+    <div class="app-footer">
+      <div class="footer-brand">
+        <img src="../images/brand-dark.svg" alt="EDIYA COFFEE" />
+      </div>
+      <ul class="guide-list reset-list">
+        <li><a href="#">개인정보처리방침</a></li>
+        <li><a href="#">멤버스 이용약관</a></li>
+        <li><a href="#">가맹 안내</a></li>
+        <li><a href="#">대량쿠폰구매</a></li>
+        <li><a href="#">채용안내</a></li>
+        <li><a href="#">고객의 소리</a></li>
+        <li><a href="#">사이트맵</a></li>
+        <li><a href="#">점주의 방</a></li>
+      </ul>
+      <address class="address">
+        <span>서울특별시 강남구 논현로 636 이디야빌딩(서울특별시 강남구 논현동 221-17)</span>
+        <span><b>TEL : </b>02-543-6467</span>
+        <span><b>FAX : </b>02-543-7191</span>
+        <span><b>사업자등록번호 : </b>107-86-16302</span>
+        <span><b>통신판매업 신고 : </b>강남 제 002519호</span>
+        <span><b>대표이사 : </b>문창기</span>
+      </address>
+      <small class="copyright">&copy; 2017 EDIYA COFFEE COMPANY. ALL RIGHTS RESERVED..</small>
+    </div>
+  </footer>
+
+</body>
+
+</html>
