@@ -71,7 +71,6 @@ body {
 }
 /* 헤더 */
 .header {
-  background: yellow;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -88,62 +87,15 @@ body {
 .logo-link img {
   width: 140px;
 }
-/* 추천 메뉴 */
-.recommend {
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-}
-/* 추천 메뉴 텍스트 */
-.recommend-text {
-}
-.recommend-text[lang="en"] {
-  font-weight: 100;
-}
-.recommend-text[lang="en"] em {
-  font-style: normal;
-  color: var(--theme-primary);
-  font-weight: 700;
-}
-.recommend-text[lang="en"]:after {
-  content: "";
-  display: block;
-  width: 40px;
-  border-top: 1px solid #000;
-  margin: 0 auto;
-}
-.recommend-text:nth-of-type(2) {
-  font-size: 1.4rem;
-}
-/* 추천 메뉴 리스트 */
-.recommend-list {
-  position: relative;
-  border-top: 10px solid red;
-}
-.recommend-beverage {
-  position: absolute;
-}
-.recommend-beverage img {
-  min-width: 100%;
-  height: auto;
-}
-/* 추천 메뉴 버튼 */
-.recommend-more-menu-btn {
-  padding: 8px 18px;
-  border: 1px solid var(--theme-primary);
-  font-size: 1.4rem;
-  color: var(--theme-primary);
-  font-weight: 700;
-  user-select: none;
-}
+
 
 @media all and (max-width:767px) {
   /* 모바일 */
-  /* 헤더 */
+  /* 모바일 헤더 */
   .header {
     position: relative;
   }
-  /* 내비 */
+  /* 모바일 내비 */
   .navigation{
     position: fixed;
     top: 0;
@@ -167,7 +119,7 @@ body {
     color: var(--theme-bright);
     font-size: 1.6rem;
   }
-  /* 내비 버튼 */
+  /* 모바일 내비 버튼 */
   .open-btn,
   .close-btn {
   border: none;
@@ -186,44 +138,17 @@ body {
     color: var(--theme-bright);
     font-size: 2.5rem;
   }
-  /* 추천 메뉴 */
-  .recommend {
-    padding-top: 42px;
-    padding-bottom: 20px;
-  }
-  /* 추천 메뉴 텍스트 */
-  .recommend-text[lang="en"] {
-    font-size: 2.5rem;    
-  }
-  .recommend-text[lang="en"] em {
-    display: block;
-    font-size: 3.1rem;
-    text-align: center;
-  }
-  .recommend-text[lang="en"]:after {
-    margin-top: 15px;
-  }
-  .recommend-text:nth-of-type(2) {
-    margin-top: 15px;
-  }
-  /* 추천 메뉴 리스트 */
-  .recommend-beverage:first-child {
-    display: none;
-  }
-  .recommend-beverage:last-child {
-    width: 60%;
-  }
-  /* 추천 메뉴 버튼 */
+ 
 }
 
 @media all and (min-width:768px) {
   /* 데스크탑 */
-  /* 레이아웃 */
+  /* 데스크탑 레이아웃 */
   .header,
   .footer {
     width: 740px;
   }
-  /* 헤더 */
+  /* 데스크탑 헤더 */
   .header-container,
   .main,
   .footer-container {
@@ -231,7 +156,7 @@ body {
     flex-flow: row wrap;
     justify-content: center;
   }
-  /* 내비 */
+  /* 데스크탑 내비 */
   .main-menu {
     display: flex;
   }
@@ -242,32 +167,9 @@ body {
     padding: 4px;
     font-size: 1.5rem;
   }
-  /* 내비 버튼 */
+  /* 데스크탑 내비 버튼 */
   .open-btn,
   .close-btn {
     display: none;
   }
-  /* 추천 메뉴 */
-  .recommend {
-    padding-top: 50px;
-    padding-bottom: 36px;
-  }
-  /* 추천 메뉴 텍스트 */
-  .recommend-text[lang="en"] {
-    font-size: 3.1rem;
-  }
-  .recommend-text[lang="en"]:after {
-    margin-top: 30px;
-  }
-  .recommend-text:nth-of-type(2) {
-    margin-top: 30px;
-  }
-  /* 추천 메뉴 리스트 */
-  .recommend-beverage:first-child {
-    width: 360px;
-  }
-  .recommend-beverage:last-child {
-    width: 458px;
-  }
-  /* 추천 메뉴 버튼 */
 }

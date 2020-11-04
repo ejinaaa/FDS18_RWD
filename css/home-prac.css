@@ -1,0 +1,99 @@
+/* 공통 추천 메뉴 */
+.recommend-container {
+  width: 100%;
+  background-color:#bae5fb;
+}
+.recommend {
+  text-align: center;
+}
+.recommend-text:nth-of-type(1) {
+  font-weight: 100;
+}
+.recommend-text:nth-of-type(1) em {
+  font-style: normal;
+  color: var(--theme-primary);
+  font-weight: 700;
+}
+.recommend-text:nth-of-type(1)::after {
+  content: "";
+  display: block;
+  width: 40px;
+  border-top: 1px solid #000;
+}
+.recommend-text:nth-of-type(2) {
+  font-size: 1.4rem;
+}
+.recommend-list {
+  position: relative;
+}
+.recommend-beverage {
+  position: absolute;
+}
+.recommend-more-menu-btn {
+  position: relative;
+  z-index: 10;
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--theme-primary);
+  line-height: 3.1rem;
+  border: 1px solid var(--theme-primary);
+  user-select: none;
+  padding: 2px 16px;
+}
+
+@media all and (max-width:768px) {
+   /* 모바일 추천 메뉴 */
+   .recommend {
+    padding: 30px 0 36px;
+  }
+  .recommend-text:nth-of-type(1) {
+    font-size: 2.5rem;
+    padding: 15px 0;
+  }
+  .recommend-text:nth-of-type(1)::after {
+    margin: 15px auto 0;
+  }
+  .recommend-text:nth-of-type(1) em {
+    display: block;
+    font-size: 3.1rem;
+  }
+  .recommend-beverage:first-child {
+    display: none;
+  }
+  .recommend-beverage:last-child {
+    width: 70%;
+    top: 50px;
+    left: 10%;
+  }
+  .recommend-more-menu-btn {
+    margin-top: 15px;
+  }
+}
+
+@media all and (min-width: 767px) {
+  /* 데스크탑추천 메뉴 */
+  .recommend {
+    width: 740px;
+    margin: 0 auto;
+    padding: 20px 0 20px;
+  }
+  .recommend-text:nth-of-type(1) {
+    padding: 30px 0;
+    font-size: 3.1rem;
+  }
+  .recommend-text:nth-of-type(1)::after {
+    margin: 30px auto 0;
+  }
+  .recommend-beverage:first-child {
+    top: -70px;
+    left: 0;
+  }
+  .recommend-beverage:last-child {
+    top: -20px;
+    right: -180px;
+  }
+  .recommend-more-menu-btn {
+    margin-top: 30px;
+  }
+}

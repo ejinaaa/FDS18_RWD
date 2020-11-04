@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./../css/style-prac.css">
+  <link rel="stylesheet" href="./../css/login-prac.css">
+</head>
+
+<body>
+  <div class="header-container">
+    <header class="header">
+      <h1 class="logo"><a href="./index-header-prac.html" class="logo-link"><img src="./../images/brand.svg"
+            alt="EDIYA COFFEE"></a></h1>
+      <button class="open-btn" type="button" title="메뉴 열기" aria-label="메뉴 열기"></button>
+      <nav class="navigation">
+        <h2 class="a11y-hidden">메인 메뉴</h2>
+        <ul class="main-menu">
+          <li><a href="login-prac.html">로그인</a></li>
+          <li><a href="#">회원가입</a></li>
+          <li><a href="#">이디야 디자인</a></li>
+          <li><a href="#">이디야 음료</a></li>
+          <li><a href="#">이디야 뉴스</a></li>
+          <li><a href="#">매장 찾기</a></li>
+        </ul>
+        <button class="close-btn" type="button" title="메뉴 닫기" aria-label="메뉴 닫기">×</button>
+      </nav>
+    </header>
+  </div>
+  <main class="main">
+    <section class="login-container">
+      <h2 class="login-heading">로그인</h2>
+      <p class="login-text" lang="en">Welcome, Ediya Coffee</p>
+      <p class="login-text">이디야커피에 오신 것을 환영합니다.</p>
+      <form action="#" class="login-form" method="POST">
+        <fieldset>
+          <legend class="a11y-hidden">로그인 폼</legend>
+          <div class="login-id">
+            <label for="loginId">이메일</label>
+            <input type="email" id="loginId" name="email" placeholder="user@domain.io" aria-required="true">
+            <span class="login-id-error">이메일 입력 방법이 잘못되었습니다. (예: user@domain.io)</span>
+          </div>
+          <div class="login-password">
+            <label for="loginPassword">패스워드</label>
+            <input type="password" id="loginPassword" name="password" aria-required="true">
+            <button class="password-btn" type="button" aria-label="패스워드 보기">
+              <span class="ir"></span>
+            </button>
+            <span class="login-password-error">패스워드는 숫자, 영어 조합 6자 이상 입력해야 합니다.</span>
+          </div>
+          <div class="save-email">
+            <input type="checkbox" id="saveEmail">
+            <span class="checkbox"></span>
+            <label for="saveEmail">이메일 저장</label>
+          </div>
+          <div class="button-container">
+            <button class="login-btn" type="submit" disabled="disabled">로그인</button>
+            <a href="#" class="signup-btn">회원가입</a>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+  <div class="footer-container">
+    <footer class="footer">footer</footer>
+  </div>
+</body>
+
+</html>
